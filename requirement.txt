@@ -1,0 +1,18 @@
+matplotlib
+numpy
+opencv-python
+torch
+torchvision
+albumentations
+tqdm
+pathlib
+
+# GPU cuda 11.7
+#torch==1.13.0+cu117
+#torchvision==0.14.0+cu117
+#torchaudio==0.13.0
+
+# CPU 
+torch==1.13.0
+torchvision==0.14.0
+torchaudio==0.13.0

@@ -1,3 +1,5 @@
 # Dataset
 
 dataset/
+dataset_original/
+src/__pycache__/
