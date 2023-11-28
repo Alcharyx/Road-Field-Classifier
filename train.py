@@ -6,7 +6,7 @@ import torch.nn as nn
 import torch.optim as optim
 import matplotlib.pyplot as plt
 import numpy as np
-from utils.CNN_model import VGG16,VGG16_test,SimpleCNN
+from utils.CNN_model import VGG16,SimpleCNN
 
 from utils.model_utils import (
      load_checkpoint,
@@ -20,7 +20,7 @@ from utils.model_utils import (
 LEARNING_RATE = 1e-4
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 BATCH_SIZE = 4
-NUM_EPOCHS = 2
+NUM_EPOCHS = 12
 NUM_WORKERS = 4
 IMAGE_HEIGHT =  224
 IMAGE_WIDTH = 336
@@ -118,8 +118,8 @@ def main():
             #A.GaussNoise(p=0.3),
             #A.RandomBrightnessContrast(p=0.3),
             A.Normalize(
-                mean=[0.0, 0.0, 0.0],
-                std=[1 ,1, 1],
+                mean=[0.485, 0.456, 0.406],     # standard normalisation parameters for ImagNet
+                std=[0.229, 0.224, 0.225], 
                 max_pixel_value = 255.0,
             ),
             ToTensorV2(),
@@ -130,8 +130,8 @@ def main():
         [
             A.Resize(height = IMAGE_HEIGHT, width = IMAGE_WIDTH),
             A.Normalize(
-                mean=[0.0, 0.0, 0.0],       #mean=[0.485, 0.456, 0.406], standard normalisation parameters for ImagNet
-                std=[1 ,1, 1],              #std=[0.229, 0.224, 0.225],
+                mean=[0.485, 0.456, 0.406],     
+                std=[0.229, 0.224, 0.225],              
                 max_pixel_value = 255.0,
             ),
             ToTensorV2(),
@@ -180,7 +180,7 @@ def main():
         "state_dict":model.state_dict(),
         "optimizer":optimizer.state_dict(),
         }
-    save_checkpoint(checkpoint,filename=MODEL_NAME + "_last.pt")
+    save_checkpoint(checkpoint,filename=MODEL_NAME + "_last")
         
     #Show loss history
     epoch_list = np.linspace(1,NUM_EPOCHS,NUM_EPOCHS)

@@ -96,7 +96,7 @@ def check_accuracy(loader, model, plot=False, device="cuda"):
                 correct += (predicted == labels).sum().item()
                 if plot == True:
                     for index in range(len(labels)):
-                        plt.imshow(images[0].permute(1,2,0))
+                        plt.imshow(images[0].permute(1,2,0).cpu())
                         if predicted[index] == labels[index]:
                             color = "green"
                         else:
