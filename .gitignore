@@ -3,3 +3,11 @@
 dataset/
 dataset_original/
 src/__pycache__/
+.vscode/launch.json
+__pycache__/train.cpython-310.pyc
+model_name_best.pt
+model_name_last.pt
+utils/__pycache__/__init__.cpython-310.pyc
+utils/__pycache__/CNN_model.cpython-310.pyc
+utils/__pycache__/dataset.cpython-310.pyc
+utils/__pycache__/model_utils.cpython-310.pyc
