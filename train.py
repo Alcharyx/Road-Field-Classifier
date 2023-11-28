@@ -188,6 +188,8 @@ def main():
     plt.plot(epoch_list,val_loss_history,color="r",label="Val Loss")
     plt.plot(epoch_list,train_loss_history,color="g",label="Train Loss")
     plt.title("Val loss vs Train loss")
+    plt.xlabel("Epoch Number")
+    plt.ylabel("Loss Value")
     plt.savefig("Train loss vs Val loss")
 
 
