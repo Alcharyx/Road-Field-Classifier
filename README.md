@@ -3,7 +3,7 @@ Small project for trimble to classify road or field in python
 
 You can use the notebook to run the project, you will need a dataset into a folder (in the project), the dataset in the folder is composed the following way :
 ```
-- Dataset
+- Dataset_original
   |- Fields
   |  |- Image1.jpg
   |  |- Image2.jpg
