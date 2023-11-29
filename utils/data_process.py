@@ -15,8 +15,7 @@ def generate_dataset(data_path : Path,
     """
     if (data_split[0] + data_split[1] != 100):
         raise ValueError("Sum of split must be equal to 100")
-
-    data_dir = []
+    rd.seed(60)
     proper_dataset = Path("./dataset")
     if (proper_dataset).exists():
         shutil.rmtree(str(proper_dataset))
@@ -32,6 +31,7 @@ def generate_dataset(data_path : Path,
     for img_class in data_folders:
         img_counter = 1
         list_img = list((data_path / img_class).iterdir())
+        rd.shuffle(list_img) #shuffle data split
         for img_path in list_img:
             if img_counter <= min_per_class:
                 if (img_counter <= amount_in_val):

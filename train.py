@@ -17,10 +17,10 @@ from utils.model_utils import (
 
 # Hyperparameters
 
-LEARNING_RATE = 1e-4
+LEARNING_RATE = 1e-5
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 BATCH_SIZE = 4
-NUM_EPOCHS = 12
+NUM_EPOCHS = 26
 NUM_WORKERS = 4
 IMAGE_HEIGHT =  224
 IMAGE_WIDTH = 336
@@ -118,7 +118,7 @@ def main():
             #A.GaussNoise(p=0.3),
             #A.RandomBrightnessContrast(p=0.3),
             A.Normalize(
-                mean=[0.485, 0.456, 0.406],     # standard normalisation parameters for ImagNet
+                mean=[0.485, 0.456, 0.406],     # standard normalisation parameters for ImageNet
                 std=[0.229, 0.224, 0.225], 
                 max_pixel_value = 255.0,
             ),
