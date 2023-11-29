@@ -12,3 +12,7 @@ utils/__pycache__/CNN_model.cpython-310.pyc
 utils/__pycache__/dataset.cpython-310.pyc
 utils/__pycache__/model_utils.cpython-310.pyc
 utils/__pycache__/data_process.cpython-310.pyc
+model_name_best-26.pt
+current_best_model.pt
+model_name_best-12.pt
+*.pt
